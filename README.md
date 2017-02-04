@@ -1,2 +1,2 @@
 # DailyDevelopment2
-This repository is used for my daily learn and keep some useful code in order to use latest.
+该项目主要记录平时学习过程中的一些零碎知识点(2017年2月相关)，具体目录如下：

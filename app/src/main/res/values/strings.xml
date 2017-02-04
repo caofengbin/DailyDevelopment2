@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DailyDevelopment2</string>
+    <string-array name="main_view_string_array">
+        <item>(1)使用反射实现ButterKnife的效果</item>
+        <item>(2)使用apt实现ButterKnife的效果</item>
+        <item>(3)Activity生命周期演示</item>
+        <item>(4)Fragment使用示例</item>
+        <item>(5)Parcelable与Serializable的使用</item>
+        <item>(6)利用Fragment实现大屏适配方案</item>
+        <item>(7)使用TextChangedListener</item>
+        <item>(8)Activity的LaunchMode</item>
+        <item>(9)Activity最佳实践</item>
+    </string-array>
 </resources>

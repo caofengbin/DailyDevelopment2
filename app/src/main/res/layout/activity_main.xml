@@ -7,4 +7,9 @@
     android:layout_height="match_parent"
     tools:context="cfb.com.dailydevelopment2.MainActivity">
 
+    <ListView
+        android:id="@+id/main_activity_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </RelativeLayout>
