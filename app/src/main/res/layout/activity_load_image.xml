@@ -11,4 +11,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity">
 
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is Button"
+        android:textAllCaps="false"
+        />
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_below="@id/myButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

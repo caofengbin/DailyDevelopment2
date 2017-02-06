@@ -144,26 +144,6 @@ public class ImageLoader {
     }
 
     /**
-     * 添加Bitmap到内存缓存
-     * @param key
-     * @param bitmap
-     */
-    private void addBitmapToMemoryCache(String key,Bitmap bitmap) {
-        if(getBitmapFromMemCache(key) == null) {
-            mMemoryCache.put(key,bitmap);
-        }
-    }
-
-    /**
-     * 从内存缓存中取图片
-     * @param key
-     * @return
-     */
-    private Bitmap getBitmapFromMemCache(String key) {
-        return mMemoryCache.get(key);
-    }
-
-    /**
      * 对外暴露的方法，用来在指定控件上显示图片
      * 调用这种方式会按照原图显示
      * NOTE THAT: should run in UI Thread
@@ -205,6 +185,27 @@ public class ImageLoader {
         };
 
         THREAD_POOL_EXECUTOR.execute(loadBitmapTask);
+    }
+
+    /**
+     * 添加Bitmap到内存缓存
+     * 当从磁盘缓存读取到图片时，会将它加入
+     * @param key
+     * @param bitmap
+     */
+    private void addBitmapToMemoryCache(String key,Bitmap bitmap) {
+        if(getBitmapFromMemCache(key) == null) {
+            mMemoryCache.put(key,bitmap);
+        }
+    }
+
+    /**
+     * 从内存缓存中取图片
+     * @param key
+     * @return
+     */
+    private Bitmap getBitmapFromMemCache(String key) {
+        return mMemoryCache.get(key);
     }
 
     /**
@@ -381,6 +382,7 @@ public class ImageLoader {
         }
         return cacheKey;
     }
+
     private String bytesToHexString(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < bytes.length; i++) {
@@ -427,6 +429,10 @@ public class ImageLoader {
         }
     }
 
+    /**
+     * 定义的内部类，表示一个加载图片成功的结果
+     * 用于在主线程回调处理UI显示
+     */
     private static class LoaderResult {
         public ImageView imageView;
         public String uri;

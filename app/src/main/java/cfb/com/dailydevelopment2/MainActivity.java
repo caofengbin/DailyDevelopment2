@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity;
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private String[] mainItems;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         switch (position) {
             case 0:
+                startIntent(LoadImageActivity.class);
                 break;
             case 1:
                 break;
