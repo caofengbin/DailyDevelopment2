@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity;
+import cfb.com.dailydevelopment2.example2.progressbar.ProgressBarActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(LoadImageActivity.class);
                 break;
             case 1:
+                startIntent(ProgressBarActivity.class);
                 break;
             case 2:
                 break;
