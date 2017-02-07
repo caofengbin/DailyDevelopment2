@@ -7,6 +7,8 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
+import java.util.Random;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cfb.com.dailydevelopment2.R;
@@ -22,7 +24,7 @@ public class ProgressBarActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             int progress = mProgressBar2.getProgress();
-            progress = progress + 10;
+            progress = progress + new Random().nextInt(25) + 5;
             mProgressBar2.setProgress(progress);
         }
     };
@@ -41,7 +43,8 @@ public class ProgressBarActivity extends AppCompatActivity {
                 super.run();
                 for(int i = 0 ; i < 10 ; i++) {
                     try {
-                        Thread.sleep(1000);
+                        long sleepTime = new Random().nextInt(1000) + 100;
+                        Thread.sleep(sleepTime);
                         mHandler.obtainMessage(MESSAGE_POST_RESULT).sendToTarget();
                     } catch(Exception e) {
 

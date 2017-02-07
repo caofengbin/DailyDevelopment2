@@ -8,8 +8,6 @@ package cfb.com.dailydevelopment2;
 public class URLArrays {
 
     public static String[] imageUrls = {
-
-            "http://ww2.sinaimg.cn/large/610dc034jw1fak99uh554j20u00u0n09.jpg",
             "http://ww1.sinaimg.cn/large/610dc034jw1faj6sozkluj20u00nt75p.jpg",
             "http://ww1.sinaimg.cn/large/610dc034jw1fahy9m7xw0j20u00u042l.jpg",
             "http://ww4.sinaimg.cn/large/610dc034jw1fagrnmiqm1j20u011hanr.jpg",

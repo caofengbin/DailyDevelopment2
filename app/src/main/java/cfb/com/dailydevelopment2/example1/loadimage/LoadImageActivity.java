@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,14 +107,21 @@ public class LoadImageActivity extends AppCompatActivity implements AbsListView.
 
         @Override
         public View getView(int i, View convertView, ViewGroup parent) {
-            ViewHolder viewHolder = null;
+            // 提升ListView运行效率的典型写法
+            View view;
+            ViewHolder viewHolder;
+
             if(convertView == null) {
-                convertView = mInflater.inflate(R.layout.image_list_item, parent, false);
+                // 没有视图复用，从布局文件中加载视图
+                view = mInflater.inflate(R.layout.image_list_item, parent, false);
+
                 viewHolder = new ViewHolder();
-                viewHolder.imageView = (ImageView) convertView.findViewById(R.id.image);
-                convertView.setTag(viewHolder);
+                viewHolder.imageView = (ImageView) view.findViewById(R.id.image);
+
+                view.setTag(viewHolder);
             } else{
-                viewHolder = (ViewHolder) convertView.getTag();
+                view = convertView;
+                viewHolder = (ViewHolder) view.getTag();
             }
 
             ImageView imageView = viewHolder.imageView;
@@ -125,20 +133,21 @@ public class LoadImageActivity extends AppCompatActivity implements AbsListView.
             if(!url.equals(tag)) {
                 imageView.setImageDrawable(mDefaultBitmapDrawable);
             }
-
-            imageView.setTag(url);
-            if(url.equals(tag)) {
-                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
-            }
-
-//            if(mIsGridViewIdle) {
-//                imageView.setTag(url);
+//
+//            imageView.setTag(url);
+//            if(url.equals(tag)) {
 //                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
 //            }
-            return convertView;
+
+            if(mIsGridViewIdle) {
+                imageView.setTag(url);
+                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+            }
+            return view;
         }
     }
 
+    // 定义内部类ViewHolder用于对控件的实例进行缓存
     private static class ViewHolder {
         public ImageView imageView;
     }
