@@ -3,7 +3,15 @@
 
 ## 1.ImageLoader的使用
 
-&emsp;&emsp;
+&emsp;&emsp;本部分主要参照任玉刚--《Android开发艺术探索》第12章的内容，模拟实现一个ImageLoader的过程。主要涉及的技术包括：
+
+> * BitmapFactory加载图片的四种方式；
+> * 使用BitmapFactory.Option进行图片的高效加载；
+> * LRU算法基本原理
+> * LruCache类的详细使用
+> * DiskLruCache的详细使用
+> * ImageLoader的大致实现细节
+> * ImageLoader**处理列表显示错误的细节**
 
 ## 2.ProgressBar的使用
 
