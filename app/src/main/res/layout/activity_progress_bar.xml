@@ -10,7 +10,8 @@
     <ProgressBar
         android:id="@+id/progress_bar1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:indeterminate="true"/>
 
     <TextView
         android:id="@+id/text1"
@@ -32,11 +33,20 @@
         android:layout_marginTop="15dp"/>
 
     <TextView
+        android:id="@+id/progressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_bar2"
+        android:textAllCaps="false"
+        android:text="完成进度"
+        android:gravity="center"/>
+
+    <TextView
         android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/progress_bar2"
+        android:layout_below="@id/progressText"
         android:textAllCaps="false"
         android:text="系统原始的ProgressBar(水平进度条)"
         android:gravity="center"/>

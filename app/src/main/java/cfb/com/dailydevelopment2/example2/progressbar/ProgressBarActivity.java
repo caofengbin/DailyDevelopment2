@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -18,6 +19,9 @@ public class ProgressBarActivity extends AppCompatActivity {
     @BindView(R.id.progress_bar2)
     public ProgressBar mProgressBar2;
 
+    @BindView(R.id.progressText)
+    public TextView mProgressTextView;
+
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
 
         @Override
@@ -26,6 +30,12 @@ public class ProgressBarActivity extends AppCompatActivity {
             int progress = mProgressBar2.getProgress();
             progress = progress + new Random().nextInt(25) + 5;
             mProgressBar2.setProgress(progress);
+            if(progress <= 100) {
+                mProgressTextView.setText("完成进度为:"+progress+"%");
+            } else {
+                mProgressTextView.setText("完成进度为:100%");
+            }
+
         }
     };
 

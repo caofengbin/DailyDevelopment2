@@ -11,6 +11,10 @@
 
 实现了如下的几个效果，
 
+<center>
+![progressBar效果演示](http://occl9k36n.bkt.clouddn.com/2017_02_08_progressbar_show.gif)
+</center>
+
 ###（1）最基本的效果
 
 ``` java
@@ -45,3 +49,52 @@ android:max="100"
 ```
 
 ### (3)自定义进度条效果
+
+demo中给出了具体的实现效果。
+代码为
+
+```	java
+<ProgressBar
+        android:id="@+id/progress_bar3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/self_define_progressbar"
+        android:layout_below="@id/text2"
+        android:layout_marginTop="15dp"/>
+
+```
+
+``` java
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" >
+
+    <shape
+        android:innerRadiusRatio="3"
+        android:shape="ring"
+        android:thicknessRatio="8"
+        android:useLevel="false" >
+        <gradient
+            android:centerColor="#FF303d4b"
+            android:centerY="0.50"
+            android:endColor="#FF2973c5"
+            android:startColor="#FF1d508a"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+
+</rotate>
+
+```
+
+回顾一下一个重要的属性
+| 属性名      					| 取值    		|  描述  |
+| --------   					| -----:   		| :----: |
+|android:indeterminate|true		| false			|启用indeterminate（中文：不定的，不明确）模式。设置为true。将导致启用进度条的动画。|
+
+    
