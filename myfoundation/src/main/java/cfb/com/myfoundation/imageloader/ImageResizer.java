@@ -19,6 +19,7 @@ public class ImageResizer {
     public ImageResizer() {
     }
 
+    // 从资源文件加载指定宽高的图片
     public Bitmap decodeSampledBitmapFromResource(Resources res,
                                                   int resId, int reqWidth,int reqHeight) {
         // First decode with inJustDecodeBounds=true to check dimensions
@@ -34,6 +35,7 @@ public class ImageResizer {
         return BitmapFactory.decodeResource(res,resId,options);
     }
 
+    // 从文件系统加载指定宽高的图片
     public Bitmap decodeSampledBitmapFromFileDescriptor(FileDescriptor fd, int reqWidth, int reqHeight) {
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -52,8 +54,8 @@ public class ImageResizer {
     /**
      * 给出Options和指定的宽高，计算相应的采样率
      * @param options
-     * @param reqWidth
-     * @param reqHeight
+     * @param reqWidth          指定的宽度
+     * @param reqHeight         指定的高度
      * @return
      */
     public int calculateInSampleSize(BitmapFactory.Options options,

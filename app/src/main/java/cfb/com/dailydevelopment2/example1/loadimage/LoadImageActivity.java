@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cfb.com.dailydevelopment2.R;
-import cfb.com.dailydevelopment2.URLArrays;
 import cfb.com.myfoundation.imageloader.ImageLoader;
 
 /**

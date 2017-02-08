@@ -1,4 +1,4 @@
-package cfb.com.dailydevelopment2;
+package cfb.com.dailydevelopment2.example1.loadimage;
 
 /**
  * 存储所有的图片路径
