@@ -92,9 +92,16 @@ demo中给出了具体的实现效果。
 
 ```
 
-回顾一下一个重要的属性
-| 属性名      					| 取值    		|  描述  |
-| --------   					| -----:   		| :----: |
-|android:indeterminate|true		| false			|启用indeterminate（中文：不定的，不明确）模式。设置为true。将导致启用进度条的动画。|
+回顾一下比较重要的属性
 
+> * (1)android:indeterminate,取值为true| false，作用：启用indeterminate（中文：不定的，不明确）模式。设置为true。将导致启用进度条的动画。
+> * (2)android:indeterminateBehavior，取值为"repeat"|"cycle"，作用：indeterminate模式下，当进度条达到最大值时的动画处理行为："repeat"= Animation.RESTART，动画将从头开始执行。"cycle" = Animation.REVERSE，动画将反向从头开始执行。
+> * (3)android:indeterminateDrawable，indeterminate模式下使用的Drawable对象。该对象如果是动画对象（继承自Animatable），
+将会在onDraw方法中被启动动画。
+
+更多自定义ProgressBar的参考链接
+
+[Android的ProgressBar自定义入门](http://blog.csdn.net/zenip/article/details/8575498)
+
+[简单自定义ProgressBar](http://www.jianshu.com/p/1afc30ba2811)
     
