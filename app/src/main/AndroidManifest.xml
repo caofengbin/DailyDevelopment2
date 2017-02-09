@@ -25,7 +25,13 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".example2.progressbar.ProgressBarActivity"
+        <activity
+            android:name=".example2.progressbar.ProgressBarActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".example3.testlayout.TestLayoutActivity"
                   android:exported="false"
                   android:launchMode="singleTop"
                   android:screenOrientation="portrait">

@@ -1,8 +1,8 @@
 package cfb.com.dailydevelopment2;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity;
 import cfb.com.dailydevelopment2.example2.progressbar.ProgressBarActivity;
+import cfb.com.dailydevelopment2.example3.testlayout.TestLayoutActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(ProgressBarActivity.class);
                 break;
             case 2:
+                startIntent(TestLayoutActivity.class);
                 break;
             case 3:
                 break;
