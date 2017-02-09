@@ -114,4 +114,19 @@ demo中给出了具体的实现效果。
 [Android的ProgressBar自定义入门](http://blog.csdn.net/zenip/article/details/8575498)
 
 [简单自定义ProgressBar](http://www.jianshu.com/p/1afc30ba2811)
+
+## 3.百分比布局的使用
+
+&emsp;&emsp;在之前，只有LinearLayout可以使用layout:weight属性，来实现按比例指定控件大小的功能。因此安卓引入一种全新的布局方式来解决这个问题--百分比布局。
+
+> * PercentFrameLayout
+> * PercentRelativeLayout
+
+使用前需要在build文件中引入：
+
+``` java
+compile 'com.android.support:percent:24.2.1'
+```
+
+一个完整的布局使用示例代码可以看具体的文件中使用，尝试采用了PeercentFrameLayout。
     

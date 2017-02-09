@@ -131,16 +131,37 @@ public class LoadImageActivity extends AppCompatActivity implements AbsListView.
             if(!url.equals(tag)) {
                 imageView.setImageDrawable(mDefaultBitmapDrawable);
             }
-//
+
+
+            // 示例1，原书给出的示例代码
+            if(mIsGridViewIdle) {
+                imageView.setTag(url);
+                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+            }
+
+            // 示例2，去掉滑动时停止加载，如下代码所示，
+            // 快速滑动，会出现在同一个View区域先后展示多张图片的问题
+            // 原因分析，执行到这里，先set了TAG，提交加载任务
+            // 之所以出现了在同一个View区域先后展示多张图片的问题
+            // 是因为一旦制定到了这里，通多bindBitmap方法就一定给指定的Imageiew提交了一个加载图片
+            // 的任务，这个任务完成时，就一定会加载图片
+//            imageView.setTag(url);
+//            mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+
+
+            // 示例3，这种方式一开始只加载一张图，必须进行轻微的触碰才可以把所有图片都加载出来
 //            imageView.setTag(url);
 //            if(url.equals(tag)) {
 //                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
 //            }
 
-            if(mIsGridViewIdle) {
-                imageView.setTag(url);
-                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
-            }
+            // 示例4
+//            imageView.setTag(url);
+//            if(url.equals(tag) || tag == null) {
+//                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+//            }
+
+
             return view;
         }
     }
