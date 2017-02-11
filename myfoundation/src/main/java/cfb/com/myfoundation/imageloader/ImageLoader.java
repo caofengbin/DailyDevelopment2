@@ -168,10 +168,10 @@ public class ImageLoader {
      * 对外暴露的方法，用来在指定控件上显示图片
      * 指定需要显示区域的高度和宽度
      * 是一个异步加载图片的实现过程
-     * @param url
-     * @param imageView
-     * @param reqWidth
-     * @param reqHeight
+     * @param url                   待加载图片的url
+     * @param imageView             需要显示在的指定ImageView
+     * @param reqWidth              指定的宽度
+     * @param reqHeight             指定的高度
      */
     public void bindBitmap(final String url,final ImageView imageView,final int reqWidth,
                            final int reqHeight) {

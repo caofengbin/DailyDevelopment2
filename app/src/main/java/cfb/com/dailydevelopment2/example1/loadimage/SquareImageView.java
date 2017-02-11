@@ -5,7 +5,8 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * Created by Administrator on 2017/2/7.
+ * 自定义的一个正方形的ImageView，为了实际在照片墙中显示的美观
+ * Created by fengbincao on 2017/2/7.
  */
 
 public class SquareImageView extends ImageView {

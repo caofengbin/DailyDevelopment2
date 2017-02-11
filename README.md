@@ -13,7 +13,46 @@
 > * ImageLoader的大致实现细节
 > * ImageLoader**处理列表显示错误的细节**
 
+该实例中方式出现图片显示错位的关键代码：
 
+``` java
+
+if(!url.equals(tag)) {
+	imageView.setImageDrawable(mDefaultBitmapDrawable);
+}
+  
+if(mIsGridViewIdle) {
+	imageView.setTag(url);
+	mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+}
+              
+```
+
+关于优化列表卡段的几个实践：
+> * (1)不要在getView中做太多的耗时操作，加载图片的过程要异步进行；
+> * (2)特殊情况下，可以考虑开启硬件加速，通过设置android:hardwareAcceletate="true"，使相应的Activity开启硬件加速；
+> * (3)控制异步任务的执行频率，简单的说就是通过在列表滑动过程中，停止提交加载图片的任务，列表滑动结束再进行图片加载操作；
+
+``` java
+
+	@Override
+    public void onScrollStateChanged(AbsListView absListView, int scrollState) {
+        if(scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+            mIsGridViewIdle = true;
+            mImageAdapter.notifyDataSetChanged();
+        } else {
+            mIsGridViewIdle = false;
+        }
+    }
+
+	if(mIsGridViewIdle) {
+		imageView.setTag(url);
+		mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
+	}
+
+```
+
+通常情况下，通过这三条优化方式，列表就不会有卡顿现象。
 
 ## 2.ProgressBar的使用
 

@@ -132,7 +132,6 @@ public class LoadImageActivity extends AppCompatActivity implements AbsListView.
                 imageView.setImageDrawable(mDefaultBitmapDrawable);
             }
 
-
             // 示例1，原书给出的示例代码
             if(mIsGridViewIdle) {
                 imageView.setTag(url);
@@ -155,12 +154,11 @@ public class LoadImageActivity extends AppCompatActivity implements AbsListView.
 //                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
 //            }
 
-            // 示例4
+            // 示例4，对上面的那个问题的一个逻辑判断
 //            imageView.setTag(url);
 //            if(url.equals(tag) || tag == null) {
 //                mImageLoader.bindBitmap(url,imageView,mImageWidth,mImageWidth);
 //            }
-
 
             return view;
         }
