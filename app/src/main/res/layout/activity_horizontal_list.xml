@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <!--整体分为上下 即title和content 然后title再分左右 content再分左右-->
+
+    <!--上部分 title左右-->
+    <LinearLayout android:id="@+id/titleLayout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#1D2228"
+        >
+
+        <include layout="@layout/title_left"/>
+        <include layout="@layout/title_right"/>
+    </LinearLayout>
+
+    <!--上部分 content左右-->
+    <ScrollView android:id="@+id/contentScrollView"
+        android:scrollbars="none"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff7b828b"
+        >
+        <LinearLayout android:id="@+id/contentLayout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <!--左边listview-->
+            <cfb.com.dailydevelopment2.example4.horizontallistview.MyListView
+                android:id="@+id/contentListViewLeft"
+                android:dividerHeight="0dip"
+                android:divider="@null"
+                android:layout_width="120dp"
+                android:layout_height="fill_parent"
+
+                />
+            <!--右边listview-->
+            <cfb.com.dailydevelopment2.example4.horizontallistview.MySyncHorizontalScrollView
+                android:id="@+id/rightContentHorscrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+                <cfb.com.dailydevelopment2.example4.horizontallistview.MyListView
+                    android:id="@+id/contentListViewRight"
+                    android:dividerHeight="0dip"
+                    android:divider="@null"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    />
+            </cfb.com.dailydevelopment2.example4.horizontallistview.MySyncHorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

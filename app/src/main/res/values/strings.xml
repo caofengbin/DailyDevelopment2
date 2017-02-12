@@ -4,7 +4,7 @@
         <item>(1)使用ImageLoader</item>
         <item>(2)使用ProgressBar</item>
         <item>(3)百分比布局的使用</item>
-        <item>(4)Fragment使用示例</item>
+        <item>(4)水平与竖向滑动的ListView</item>
         <item>(5)Parcelable与Serializable的使用</item>
         <item>(6)利用Fragment实现大屏适配方案</item>
         <item>(7)使用TextChangedListener</item>

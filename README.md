@@ -64,7 +64,7 @@ if(mIsGridViewIdle) {
 ![progressBar效果演示](http://occl9k36n.bkt.clouddn.com/2017_02_08_progressbar_show.gif)
 </center>
 
-###（1）最基本的效果
+### (1)最基本的效果
 
 ``` java
 	<ProgressBar
@@ -73,7 +73,7 @@ if(mIsGridViewIdle) {
         android:layout_height="wrap_content"/>
 ```
 
-###（2）水平进度条效果效果
+### (2)水平进度条效果效果
 
 &emsp;&emsp;动画中已经演示了具体的效果，关键技术：
 
@@ -169,3 +169,4 @@ compile 'com.android.support:percent:24.2.1'
 
 一个完整的布局使用示例代码可以看具体的文件中使用，尝试采用了PeercentFrameLayout。
     
+## 4.实现一个可以同时左右滑动和上下滑动的ListView
