@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -61,6 +62,21 @@ public class HorizontalListActivity extends AppCompatActivity {
         contentListViewLeft.setAdapter(leftAdapter);
         rightAdapter = new RightAdapter(this, 0, new ArrayList<Product>());
         contentListViewRight.setAdapter(rightAdapter);
+
+        contentListViewRight.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+                    Log.e(TAG, "onScrollStateChanged:SCROLL_STATE_IDLE");
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                Log.e(TAG,"onScrollStateChanged:onScroll");
+
+            }
+        });
 
         //get data
         new Thread(){
