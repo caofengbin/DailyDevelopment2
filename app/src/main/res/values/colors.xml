@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="black">#000000</color><!--黑色 -->
+
+    <!-- table_fix_headers(start) -->
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+    <color name="item_n">#ffffff</color>
+    <color name="item_p">#fafafa</color>
+    <color name="table_header">#d7d7d7</color>
+    <!-- table_fix_headers(end) -->
 </resources>
