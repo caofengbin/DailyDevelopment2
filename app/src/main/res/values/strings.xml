@@ -36,5 +36,4 @@
     <string name="bound_search_result_head_jzghr">交易流通终止日</string>
     <string name="bound_search_result_head_qxr">起息日</string>
     <string name="bound_search_result_head_dqr">兑付日</string>
-    <!-- End -->
 </resources>

@@ -12,7 +12,7 @@ import cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity;
 import cfb.com.dailydevelopment2.example2.progressbar.ProgressBarActivity;
 import cfb.com.dailydevelopment2.example3.testlayout.TestLayoutActivity;
 import cfb.com.dailydevelopment2.example4.horizontallistview.HorizontalListActivity;
-import cfb.com.dailydevelopment2.example5.horizontallistview2.HorizontalListActivity3;
+import cfb.com.dailydevelopment2.example5.horizontallistview2.HorizontalListActivity2;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(HorizontalListActivity.class);
                 break;
             case 4:
-                startIntent(HorizontalListActivity3.class);
+                startIntent(HorizontalListActivity2.class);
                 break;
             case 5:
                 break;

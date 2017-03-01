@@ -2,6 +2,7 @@ package cfb.com.dailydevelopment2.example5.horizontallistview2;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.HorizontalScrollView;
 
@@ -9,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 自定义的滚动控件
- * 重载了onScrollChange(滚动条变化)，监听每次的变化通知给观察者
- * 对外提供AddOnScrollChangedListener 来订阅本控件的滚动条变化
- * Created by fengbincao on 2017/2/26.
+ * 自定义的 滚动控件
+ * 重载了 onScrollChanged（滚动条变化）,监听每次的变化通知给 观察(此变化的)观察者
+ * 可使用 AddOnScrollChangedListener 来订阅本控件的 滚动条变化
+ * Created by willkong on 2016/11/15.
  */
 
 public class ObserverHScrollView extends HorizontalScrollView {
@@ -31,10 +32,7 @@ public class ObserverHScrollView extends HorizontalScrollView {
         super(context, attrs, defStyleAttr);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        return super.onTouchEvent(ev);
-    }
+
 
     /**
      * 监听控件的滑动变化
@@ -48,8 +46,8 @@ public class ObserverHScrollView extends HorizontalScrollView {
         /*
 		 * 当滚动条移动后，引发 滚动事件。通知给观察者，观察者会传达给其他的。
 		 */
-        if (mScrollViewObserver != null ) {
-            mScrollViewObserver.notifyOnScrollChanged(l, t, oldl, oldt);
+        if (mScrollViewObserver != null /*&& (l != oldl || t != oldt)*/) {
+            mScrollViewObserver.NotifyOnScrollChanged(l, t, oldl, oldt);
         }
         super.onScrollChanged(l, t, oldl, oldt);
     }
@@ -57,43 +55,47 @@ public class ObserverHScrollView extends HorizontalScrollView {
     /*
 	 * 订阅 本控件 的 滚动条变化事件
 	 * */
-    public void addOnScrollChangedListener(OnScrollChangedListener listener) {
-        mScrollViewObserver.addOnScrollChangedListener(listener);
+    public void AddOnScrollChangedListener(OnScrollChangedListener listener) {
+        mScrollViewObserver.AddOnScrollChangedListener(listener);
     }
 
     /*
      * 取消 订阅 本控件 的 滚动条变化事件
      * */
-    public void removeOnScrollChangedListener(OnScrollChangedListener listener) {
-        mScrollViewObserver.removeOnScrollChangedListener(listener);
+    public void RemoveOnScrollChangedListener(OnScrollChangedListener listener) {
+        mScrollViewObserver.RemoveOnScrollChangedListener(listener);
     }
 
-    // 观察者，监听滚动事件
-    public static class ScrollViewObserver {
 
+    /**
+     * 观察者
+     */
+    public static class ScrollViewObserver{
         List<OnScrollChangedListener> mList;
-
-        public ScrollViewObserver() {
+        public ScrollViewObserver(){
             super();
-            mList = new ArrayList<>();
+            mList = new ArrayList<OnScrollChangedListener>();
+
         }
 
         /**
          * 订阅 本控件 的 滚动条变化事件
+         * @param listener
          */
-        public void addOnScrollChangedListener(OnScrollChangedListener listener) {
+        public void AddOnScrollChangedListener(OnScrollChangedListener listener) {
             mList.add(listener);
         }
 
         /**
          * 取消 订阅 本控件 的 滚动条变化事件
+         * @param listener
          */
-        public void removeOnScrollChangedListener(
+        public void RemoveOnScrollChangedListener(
                 OnScrollChangedListener listener) {
             mList.remove(listener);
         }
 
-        public void notifyOnScrollChanged(int l, int t, int oldl, int oldt) {
+        public void NotifyOnScrollChanged(int l, int t, int oldl, int oldt) {
             if (mList == null || mList.size() == 0) {
                 return;
             }
@@ -103,10 +105,54 @@ public class ObserverHScrollView extends HorizontalScrollView {
                 }
             }
         }
+
     }
 
-    // 当发生了滚动事件时，调用这个接口
+    /*
+	 * 当发生了滚动事件时,调用这个接口
+	 */
     public static interface OnScrollChangedListener {
         public void onScrollChanged(int l, int t, int oldl, int oldt);
+    }
+
+    private int mLastX;
+    private int mLastY;
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        boolean shouldConsume = false;
+
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN: {
+                mLastX = (int) event.getX();
+                mLastY = (int) event.getY();
+                break;
+            }
+            case MotionEvent.ACTION_MOVE: {
+                int deltaX = x - mLastX;
+                int deltaY = y - mLastY;
+                if(deltaX > deltaY)
+                    shouldConsume = true;
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+
+                break;
+            }
+            default:
+                break;
+        }
+
+        if(shouldConsume)
+            Log.e("test","水平滑动View消耗了事件");
+        else {
+            Log.e("test","水平滑动View不消耗事件");
+        }
+        mLastX = x;
+        mLastY = y;
+        return super.onTouchEvent(event);
     }
 }

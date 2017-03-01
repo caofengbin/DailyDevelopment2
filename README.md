@@ -171,3 +171,15 @@ compile 'com.android.support:percent:24.2.1'
     
 ## 4.实现一个可以同时左右滑动和上下滑动的ListView
 
+&emsp;&emsp;本实现方案中，通过左右两个ListView方式来实现，并将这两个ListView包在同一个ScrollView中，可以比较好的解决ListVIew联动导致数据错乱的问题，但是他的缺点也很明显，就是用了两个ListView，导致两边的点击事件很难进行同步响应。另外就是由于ListVIew加在了ScrollView中，导致一个很坑的问题就是add onScrollListener会失效，没法监听响应，这样想监听整个ListVIew滑动到哪里时是没法做到的。另外就是addFooterView时，会出现很坑的问题就是整个FooterVIew会跟着右边的ListView左右滑动。实际上很不采用这种方式来实现这个效果。运行截图如下所示：
+
+<center>
+![水平滑动ListView效果1](http://occl9k36n.bkt.clouddn.com/2017_03_01_horizontal_list_view1.png)
+</center>
+
+## 5.实现一个可以同时左右滑动和上下滑动的ListView--方案2
+
+<center>
+![水平滑动ListView效果2](http://occl9k36n.bkt.clouddn.com/2017_03_01_horizontal_list_view2.png)
+</center>
+

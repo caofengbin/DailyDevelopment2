@@ -6,13 +6,12 @@ import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 /**
- * 一个视图容器控件
- * 阻止拦截onTouch事件传递给其子控件
- * Created by fengbincao on 2017/2/26.
+ *一个视图容器控件
+ * 阻止 拦截 ontouch事件传递给其子控件
+ * Created by willkong on 2016/11/15.
  */
 
-public class ObserverHScrollViewIntercept extends LinearLayout {
-
+public class ObserverHScrollViewIntercept extends LinearLayout{
     public ObserverHScrollViewIntercept(Context context) {
         this(context,null);
     }
@@ -25,7 +24,6 @@ public class ObserverHScrollViewIntercept extends LinearLayout {
         super(context, attrs, defStyleAttr);
     }
 
-    // 直接拦截onTouche事件
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         return true;

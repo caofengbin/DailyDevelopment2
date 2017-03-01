@@ -43,11 +43,7 @@
             android:name=".example5.horizontallistview2.HorizontalListActivity2"
             android:exported="false"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".example5.horizontallistview2.HorizontalListActivity3"
-            android:label="@string/title_activity_horizontal_list3"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
