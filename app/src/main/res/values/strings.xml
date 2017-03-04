@@ -6,11 +6,18 @@
         <item>(3)百分比布局的使用</item>
         <item>(4)水平与竖向滑动的ListView</item>
         <item>(5)水平与竖向滑动的ListView(2)</item>
-        <item>(6)利用Fragment实现大屏适配方案</item>
-        <item>(7)使用TextChangedListener</item>
-        <item>(8)Activity的LaunchMode</item>
-        <item>(9)Activity最佳实践</item>
+        <item>(6)RecyclerView的相关使用</item>
+        <item>(7)简易的聊天室界面</item>
+        <item>(8)</item>
+        <item>(9)</item>
     </string-array>
+
+    <string-array name="recycler_view_string_array">
+        <item>(1)纵向布局的RecyclerView使用</item>
+        <item>(2)横向布局的RecyclerView使用</item>
+        <item>(3)瀑布流布局的RecyclerView使用</item>
+    </string-array>
+
     <string name="title_activity_horizontal_list3">HorizontalListActivity3</string>
 
     <!-- 债券查询结果表头 -->
@@ -36,4 +43,5 @@
     <string name="bound_search_result_head_jzghr">交易流通终止日</string>
     <string name="bound_search_result_head_qxr">起息日</string>
     <string name="bound_search_result_head_dqr">兑付日</string>
+    <string name="title_activity_use_recycler_view">UseRecyclerViewActivity</string>
 </resources>

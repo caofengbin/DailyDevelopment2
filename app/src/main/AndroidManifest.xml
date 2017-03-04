@@ -45,6 +45,32 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".example6.recyclerview.RecyclerViewActivity"
+                  android:exported="false"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".example6.recyclerview.UseRecyclerViewActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".example6.recyclerview.UseRecyclerViewActivity2"
+                  android:exported="false"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".example6.recyclerview.UseRecyclerViewActivity3"
+                  android:exported="false"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".example7.local.refresh.ChatFrameActivity"
+                  android:exported="false"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

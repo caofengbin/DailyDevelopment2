@@ -13,6 +13,8 @@ import cfb.com.dailydevelopment2.example2.progressbar.ProgressBarActivity;
 import cfb.com.dailydevelopment2.example3.testlayout.TestLayoutActivity;
 import cfb.com.dailydevelopment2.example4.horizontallistview.HorizontalListActivity;
 import cfb.com.dailydevelopment2.example5.horizontallistview2.HorizontalListActivity2;
+import cfb.com.dailydevelopment2.example6.recyclerview.RecyclerViewActivity;
+import cfb.com.dailydevelopment2.example7.local.refresh.ChatFrameActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -53,8 +55,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(HorizontalListActivity2.class);
                 break;
             case 5:
+                startIntent(RecyclerViewActivity.class);
                 break;
             case 6:
+                startIntent(ChatFrameActivity.class);
                 break;
             case 7:
                 break;
