@@ -183,3 +183,91 @@ compile 'com.android.support:percent:24.2.1'
 ![水平滑动ListView效果2](http://occl9k36n.bkt.clouddn.com/2017_03_01_horizontal_list_view2.png)
 </center>
 
+## 6.关于RecyclerView的使用
+
+实现一个基本的RecyclerView的模板代码如下：
+
+``` java
+public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {
+
+    private List<Fruit> mFruitList;
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        View fruitView;
+        ImageView fruitImage;
+        TextView fruitName;
+
+        public ViewHolder(View view) {
+            super(view);
+            fruitView = view;
+            fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
+            fruitName = (TextView) view.findViewById(R.id.fruit_name);
+        }
+    }
+
+    public FruitAdapter(List<Fruit> fruitList) {
+        mFruitList = fruitList;
+    }
+
+    // 实现一个RecyclerView.Adapter必须实现的方法1
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item, parent, false);
+        final ViewHolder holder = new ViewHolder(view);
+        return holder;
+    }
+
+    // 实现一个RecyclerView.Adapter必须实现的方法2
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Fruit fruit = mFruitList.get(position);
+        holder.fruitImage.setImageResource(fruit.getImageId());
+        holder.fruitName.setText(fruit.getName());
+    }
+
+    // 实现一个RecyclerView.Adapter必须实现的方法3
+    @Override
+    public int getItemCount() {
+        return mFruitList.size();
+    }
+}
+
+```
+
+必须要实现的三个方法：
+
+> * (1)onCreateViewHolder,该方法主要用于创建ViewHolder实例，需要将布局加载出来，并利用该View创建ViewHolder实例；
+> * (2)对RecyclerView子项的数据进行赋值，会在每个子项被滚动到屏幕内时执行；
+> * (3)返回子项的数目；
+
+实现纵向布局RecyclerView的核心：
+
+``` java
+RecyclerView recyclerView = (RecyclerView) findViewById(R.id.first_recycler_list);
+LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+recyclerView.setLayoutManager(layoutManager);
+FruitAdapter fruitAdapter = new FruitAdapter(fruitList);
+recyclerView.setAdapter(fruitAdapter);
+```
+
+实现横向布局RecyclerView的核心：
+
+``` java
+RecyclerView recyclerView = (RecyclerView) findViewById(R.id.first_recycler_list2);
+LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+recyclerView.setLayoutManager(layoutManager);
+FruitAdapter2 fruitAdapter = new FruitAdapter2(fruitList);
+recyclerView.setAdapter(fruitAdapter);
+```
+
+实现瀑布流RecyclerView的核心：
+
+``` java
+RecyclerView recyclerView = (RecyclerView) findViewById(R.id.first_recycler_list3);
+StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
+recyclerView.setLayoutManager(layoutManager);
+FruitAdapter3 fruitAdapter = new FruitAdapter3(fruitList);
+recyclerView.setAdapter(fruitAdapter);
+```
+
