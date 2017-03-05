@@ -7,8 +7,8 @@ package cfb.com.dailydevelopment2.example7.local.refresh;
 
 public class Msg {
 
+    // 设置的两种消息类型的type
     public static final int TYPE_RECEIVED = 0;
-
     public static final int TYPE_SENT = 1;
 
     private String content;

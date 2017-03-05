@@ -179,6 +179,8 @@ compile 'com.android.support:percent:24.2.1'
 
 ## 5.实现一个可以同时左右滑动和上下滑动的ListView--方案2
 
+本例中的方案只使用一个LsitView,通过拦截下面ListView的onTouch事件，并交给顶部的HorizontalView来处理，实现上面的滑动和下面的一起联动的效果。
+
 <center>
 ![水平滑动ListView效果2](http://occl9k36n.bkt.clouddn.com/2017_03_01_horizontal_list_view2.png)
 </center>
@@ -271,3 +273,41 @@ FruitAdapter3 fruitAdapter = new FruitAdapter3(fruitList);
 recyclerView.setAdapter(fruitAdapter);
 ```
 
+## 7.简易的聊天室应用界面实现
+
+主要涉及知识点包括:
+
+> * (1)9-patch图的基本制作与使用方式；
+> * (2)RecyclerView中多item类型的使用；
+> * (3)RecyclerView的局部刷新方式；
+
+实现局部刷新的关键代码：
+
+``` java
+	adapter = new MsgAdapter(msgList);
+        msgRecyclerView.setAdapter(adapter);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String content = inputText.getText().toString();
+                if (!"".equals(content)) {
+                    Msg msg = new Msg(content, Msg.TYPE_SENT);
+                    msgList.add(msg);
+                    adapter.notifyItemInserted(msgList.size() - 1); // 当有新消息时，刷新ListView中的显示
+                    msgRecyclerView.scrollToPosition(msgList.size() - 1); // 将ListView定位到最后一行
+                    inputText.setText(""); 
+                }
+            }
+        });
+```
+
+## 8.数据持久化技术
+
+Android中主要提供了三种方案：
+
+> * (1)文件存储；
+> * (2)SharedPreferences存储；
+> * (3)数据库存储；
+
+&emsp;&emsp;文件存储中，主要就是利用Context类提供的openFileInput()和openFileOutput()方法，再结合基本的java的各种流操作技术即可以。
+&emsp;&emsp;**SharedPreferences使用的是键值对存储数据的，当保存一条数据的时候，需要给这条数据提供一个对应的键**，这样在读取数据的时候通过相应的键就可以把值读出来。而且SharedPreferences还支持多种不同的数据类型。

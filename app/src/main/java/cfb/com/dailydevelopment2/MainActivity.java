@@ -15,6 +15,7 @@ import cfb.com.dailydevelopment2.example4.horizontallistview.HorizontalListActiv
 import cfb.com.dailydevelopment2.example5.horizontallistview2.HorizontalListActivity2;
 import cfb.com.dailydevelopment2.example6.recyclerview.RecyclerViewActivity;
 import cfb.com.dailydevelopment2.example7.local.refresh.ChatFrameActivity;
+import cfb.com.dailydevelopment2.example8.storedata.StoreDataActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(ChatFrameActivity.class);
                 break;
             case 7:
+                startIntent(StoreDataActivity.class);
                 break;
             case 8:
                 break;

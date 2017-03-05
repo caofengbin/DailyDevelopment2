@@ -12,6 +12,8 @@ import java.util.List;
 import cfb.com.dailydevelopment2.R;
 
 /**
+ * 消息类型的Adapter，
+ * 在一个Adapter中通过设置type类型显示多种样式的item
  * Created by fengbincao on 2017/3/4.
  */
 
