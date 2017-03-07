@@ -77,6 +77,8 @@
         </activity>
         <activity android:name=".example8.storedata.StoreDataActivity">
         </activity>
+        <activity android:name=".example9.use.sqlite.SQLiteActivity">
+        </activity>
     </application>
 
 </manifest>

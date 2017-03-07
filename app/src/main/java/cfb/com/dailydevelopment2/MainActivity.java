@@ -16,6 +16,7 @@ import cfb.com.dailydevelopment2.example5.horizontallistview2.HorizontalListActi
 import cfb.com.dailydevelopment2.example6.recyclerview.RecyclerViewActivity;
 import cfb.com.dailydevelopment2.example7.local.refresh.ChatFrameActivity;
 import cfb.com.dailydevelopment2.example8.storedata.StoreDataActivity;
+import cfb.com.dailydevelopment2.example9.use.sqlite.SQLiteActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startIntent(StoreDataActivity.class);
                 break;
             case 8:
+                startIntent(SQLiteActivity.class);
                 break;
         }
     }
