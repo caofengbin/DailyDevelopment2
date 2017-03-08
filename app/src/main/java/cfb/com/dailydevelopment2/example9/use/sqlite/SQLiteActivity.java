@@ -29,6 +29,9 @@ public class SQLiteActivity extends AppCompatActivity {
     @BindView(R.id.query_data)
     public Button queryData;
 
+    @BindView(R.id.delete_data)
+    public Button deleteData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,12 @@ public class SQLiteActivity extends AppCompatActivity {
         dbHelper.getWritableDatabase();
     }
 
+    // 删除数据的操作
+    @OnClick(R.id.delete_data)
+    public void deleteData() {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete("Book", "pages > ?", new String[] { "500" });
+    }
     // 增加数据的操作
     @OnClick(R.id.add_data)
     public void addData() {
@@ -77,6 +86,7 @@ public class SQLiteActivity extends AppCompatActivity {
         db.update("Book", values, "name = ?", new String[] { "The Da Vinci Code" });
     }
 
+    // 查询数据
     @OnClick(R.id.query_data)
     public void queryData() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();

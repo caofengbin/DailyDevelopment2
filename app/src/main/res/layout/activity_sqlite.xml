@@ -25,7 +25,7 @@
         android:id="@+id/update_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update data"
+        android:text="Update data(修改数据)"
         android:textAllCaps="false"
         />
 
@@ -33,7 +33,7 @@
         android:id="@+id/delete_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Delete data"
+        android:text="Delete data(删除数据)"
         android:textAllCaps="false"
         />
 
@@ -41,7 +41,7 @@
         android:id="@+id/query_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Query data"
+        android:text="Query data(查询数据)"
         android:textAllCaps="false"
         />
 
