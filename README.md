@@ -310,4 +310,19 @@ Android中主要提供了三种方案：
 > * (3)数据库存储；
 
 &emsp;&emsp;文件存储中，主要就是利用Context类提供的openFileInput()和openFileOutput()方法，再结合基本的java的各种流操作技术即可以。
+
 &emsp;&emsp;**SharedPreferences使用的是键值对存储数据的，当保存一条数据的时候，需要给这条数据提供一个对应的键**，这样在读取数据的时候通过相应的键就可以把值读出来。而且SharedPreferences还支持多种不同的数据类型。
+
+## 9.SQLite的增删查改操作
+
+&emsp;&emsp;演示原生的SQLite的基本操作--增删查改数据库的实现。
+
+## 10.LitePal的增删查改操作
+
+&emsp;&emsp;演示开源项目LitePal的基本操作--增删查改数据库的实现。
+
+[1.LitePal的Github源地址](https://github.com/LitePalFramework/LitePal)
+
+[2.LitePal 1.5版本发布，你想要的都在这里](http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238794&idx=1&sn=f105f8100d62a202f5695f9496425063&chksm=88639e25bf1417330f0ffb1cf6c10ea07359ff25774313fac5addfb25541f7969d1d178e17cc&mpshare=1&scene=23&srcid=03081ZddhZdGviU3aanJkBkL#rd)
+
+[3.LitePal的CSDN专栏地址](http://blog.csdn.net/column/details/android-database-pro.html)

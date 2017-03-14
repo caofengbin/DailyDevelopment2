@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import cfb.com.dailydevelopment2.example1.loadimage.LoadImageActivity;
+import cfb.com.dailydevelopment2.example10.litepal.LitePalActivity;
 import cfb.com.dailydevelopment2.example2.progressbar.ProgressBarActivity;
 import cfb.com.dailydevelopment2.example3.testlayout.TestLayoutActivity;
 import cfb.com.dailydevelopment2.example4.horizontallistview.HorizontalListActivity;
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 8:
                 startIntent(SQLiteActivity.class);
+                break;
+            case 9:
+                startIntent(LitePalActivity.class);
                 break;
         }
     }

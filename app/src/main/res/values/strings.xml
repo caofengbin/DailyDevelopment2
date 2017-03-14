@@ -10,6 +10,7 @@
         <item>(7)简易的聊天室界面</item>
         <item>(8)数据持久化技术</item>
         <item>(9)SQLite的增删查改基本操作</item>
+        <item>(10)LitePal的增删查改基本操作</item>
     </string-array>
 
     <string-array name="recycler_view_string_array">
