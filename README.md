@@ -60,9 +60,7 @@ if(mIsGridViewIdle) {
 
 实现了如下的几个效果，
 
-<center>
 ![progressBar效果演示](http://occl9k36n.bkt.clouddn.com/2017_02_08_progressbar_show.gif)
-</center>
 
 ### (1)最基本的效果
 
